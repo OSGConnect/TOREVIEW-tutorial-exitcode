@@ -1,0 +1,12 @@
+Universe = vanilla
+
+Output = exitcode.out
+Error = exitcode.err
+Log = exitcode.log
+
+Executable = random_exit.sh
+
+on_exit_hold = (ExitBySignal == True) || (ExitCode != 0)  
+# periodic_release =  (NumJobStarts < 3) && ((CurrentTime - EnteredCurrentStatus) > (60*60))
+
+Queue 100
